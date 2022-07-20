@@ -1,0 +1,9 @@
+[map-prior]
+dataset = "BLE_IMU"
+building = "building2_f1"
+
+[map-prior.train]
+gpus = 1
+
+[map-prior.filter]
+update_rate = 60
