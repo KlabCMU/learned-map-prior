@@ -1,3 +1,6 @@
+## Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization
+IROS 2022.
+
 ### Setup
 ```bash
 conda env create --file map-prior.yml
