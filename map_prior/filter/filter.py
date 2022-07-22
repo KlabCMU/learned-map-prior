@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import scipy.stats
 from .utils import sample, passed_through_wall
-from ..map import processing
+from ..data import map_processing
 
 
 class ParticleFilter:
@@ -13,7 +13,7 @@ class ParticleFilter:
         self.init_cov = config.filter.init_std * np.eye(len(init_state))
         self.odom_cov = config.filter.odom_std * np.eye(len(init_state))
         self.building = config.building
-        self.map = processing.get_map_by_name(config.building)
+        self.map = map_processing.get_map_by_name(config.building)
         self.traj_net = traj_net
         self.deep_map = deep_map
         self.map_prior = None
@@ -31,7 +31,7 @@ class ParticleFilter:
         self.weights = np.ones(self.num_particles) * 1 / self.num_particles
 
     def reinit_particles(self):
-        reinit_loc = processing.world_to_image_coords(
+        reinit_loc = map_processing.world_to_image_coords(
             self.state[np.newaxis, :], self.building).squeeze()
         resample_size = 50
 
@@ -62,7 +62,7 @@ class ParticleFilter:
         image_points = coords[image_points_idxs]
         self.weights = coord_weights[image_points_idxs].squeeze()
         self.weights = self.weights / np.sum(self.weights)
-        self.particles = processing.image_to_world_coords(
+        self.particles = map_processing.image_to_world_coords(
             image_points, self.building)
         self.reinit = True
 
@@ -77,7 +77,7 @@ class ParticleFilter:
             self.reinit = True
 
     def map_sensor_model(self, particle, deep_map):
-        particle = processing.world_to_image_coords(
+        particle = map_processing.world_to_image_coords(
             particle[np.newaxis, :2], self.building)[0]
         if particle[0] >= deep_map.shape[0] or particle[1] >= deep_map.shape[1] or particle[0] < 0 or particle[1] < 0:
             prob = 0
@@ -87,7 +87,7 @@ class ParticleFilter:
         return prob
 
     def update(self, odom_history, ble_pred):
-        odom_history_im = processing.world_to_image_coords(
+        odom_history_im = map_processing.world_to_image_coords(
             odom_history[:, :2], self.building)
         odom_history_im = odom_history_im - odom_history_im[0]
         odom_history_im = torch.from_numpy(odom_history_im[np.newaxis, ...])

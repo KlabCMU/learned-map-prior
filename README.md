@@ -11,7 +11,7 @@ python main.py --mode TrainLightning --dataset IDOL --building building2_f1 --tr
 
 ### Filter
 ```bash
-python main.py --mode RunFilter --dataset BLE_IMU --building building2_f2
+python main.py --mode RunFilter --dataset BLE_IMU --building building2_f1
 python main.py --mode RunFilter --dataset BLE_IMU --building building2_f1 --no-filter-allow-ble-update
 python main.py --mode RunFilter --dataset IDOL --building building1 --filter-update-rate 100
 python main.py --mode RunFilter --dataset IDOL --building building1 --filter-update-rate 100 --no-filter-allow-reinit

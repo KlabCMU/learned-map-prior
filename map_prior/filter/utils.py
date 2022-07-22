@@ -1,5 +1,5 @@
 import numpy as np
-from ..map import processing
+from ..data import map_processing
 import matplotlib.pyplot as plt
 from scipy import ndimage
 import pickle
@@ -77,9 +77,9 @@ def get_line(start, end):
 
 
 def passed_through_wall(point_0, point_1, map, building):
-    point_0_im = processing.world_to_image_coords(
+    point_0_im = map_processing.world_to_image_coords(
         point_0[np.newaxis, ...], building)[0]
-    point_1_im = processing.world_to_image_coords(
+    point_1_im = map_processing.world_to_image_coords(
         point_1[np.newaxis, ...], building)[0]
     passed = False
     line_points = get_line(point_0_im, point_1_im)
@@ -103,15 +103,17 @@ def save_results(gt_states, idol_states, ble_states, filtered_states, config, od
         f"{config.dataset}_{config.building}_{odom_file.stem}.pkl"
     pickle.dump(results_dict, open(results_save_path, 'wb'))
 
-    gt_states_px = processing.world_to_image_coords(gt_states, config.building)
-    idol_states_px = processing.world_to_image_coords(
+    gt_states_px = map_processing.world_to_image_coords(
+        gt_states, config.building)
+    idol_states_px = map_processing.world_to_image_coords(
         idol_states, config.building)
-    ble_states_px = processing.world_to_image_coords(
+    ble_states_px = map_processing.world_to_image_coords(
         ble_states, config.building)
-    filtered_states_px = processing.world_to_image_coords(
+    filtered_states_px = map_processing.world_to_image_coords(
         filtered_states, config.building)
 
-    map = ndimage.binary_dilation(processing.get_map_by_name(config.building))
+    map = ndimage.binary_dilation(
+        map_processing.get_map_by_name(config.building))
 
     plt.figure()
     plt.imshow(map.T, cmap='gray')
