@@ -64,7 +64,7 @@ class ParticleFilter:
         self.weights = self.weights / np.sum(self.weights)
         self.particles = map_processing.image_to_world_coords(
             image_points, self.building)
-        self.reinit = True
+        self.reinit = False
 
     def predict(self, odom):
         bad_point_count = 0
