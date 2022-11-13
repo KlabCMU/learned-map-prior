@@ -1,7 +1,17 @@
 ## Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization
-IROS 2022.
+Dennis Melamed, Karnik Ram, Vivek Roy, Kris Kitani.
 
-### Setup
+[[`arXiv`](https://arxiv.org/pdf/2103.10400.pdf)]
+[[`Project Page`](https://klabcmu.github.io/learned-map-prior/)]
+
+In IROS 2022
+
+<p align="center">
+<a href="https://github.com/KlabCMU/learned-map-prior/blob/ed715d6b21ecbce20e12f01bddc83a4f7b237132/resources/teaser.png"><img src="https://github.com/KlabCMU/learned-map-prior/blob/ed715d6b21ecbce20e12f01bddc83a4f7b237132/resources/teaser.png" width="700"/></a>
+</p>
+Our proposed method utilizes learnable spatio-temporal map priors to reduce drift in inertial odometry.
+
+## Setup
 ```bash
 conda env create --file map-prior.yml
 ```
