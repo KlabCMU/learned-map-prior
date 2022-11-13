@@ -1,0 +1,144 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen"/>
+<link rel="icon" type="image/x-icon" href="./resources/ri-favicon.ico">
+
+
+<html lang="en">
+<head>
+	<title>Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization</title>
+    <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/
+        if you update and want to force Facebook to re-scrape. -->
+	<meta property="og:image" content="https://karnikram.info/rp-vio/resources/teaser_crop.png"/>
+	<meta property="og:title" content="Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization"/>
+	<meta property="og:description" content="IROS 22: Learnable spatio-temporal map priors to reduce drift in inertial odometry." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<div class="container">
+    <div class="title">
+        Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization
+    </div>
+
+    <br>
+    <br>
+
+    <div class="author">
+	<a href="https://dennismelamed.me/">Dennis Melamed</a>
+    </div>
+    <div class="author">
+    	<a href="https://karnikram.info/">Karnik Ram</a>
+    </div>
+    <div class="author">
+	<a href="https://vivekroy.com">Vivek Roy</a>
+    </div>
+    <div class="author">
+	<a href="https://kriskitani.github.io/">Kris Kitani</a>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="affiliation">Robotics Institute, Carnegie Mellon University</div>
+
+    <br>
+    <br>
+
+    <div class="container">
+    <div class="links">In <a href="https://www.iros2022.org/">IROS 2022</a></div>
+    </div>
+
+    <br>
+
+    <div class="links"><a href="https://arxiv.org/pdf/2103.10400.pdf">[Paper]</a></div>
+    <div class="links"><a href="https://www.youtube.com/watch?v=tgvP2H7wQQE">[Video]</a></div>
+    <div class="links"><a href="https://github.com/KlabCMU/learned-map-prior">[Code]</a></div>
+
+    <br><br>
+
+   <img style="width:60%;" src="./resources/teaser.png"
+             alt="Teaser figure"/>
+    <br>
+    <br>
+    </a>
+     <i>
+        Our proposed method utilizes learnable spatio-temporal map
+        priors to reduce drift in inertial odometry.
+    </i>
+
+    <br>
+    <hr>
+
+    <h1>Abstract</h1>
+    <p>
+        Indoor localization systems often fuse inertial odometry with map information via hand-defined methods to reduce odometry drift, but such methods are sensitive to noise and struggle to generalize across odometry sources.
+        To address the robustness problem in map utilization, we propose a data-driven prior on possible user locations in a map by combining learned spatial map embeddings and temporal odometry embeddings.
+        Our prior learns to encode which map regions are feasible locations for a user more accurately than previous hand-defined methods.
+        This prior leads to a 49% improvement in inertial-only localization accuracy when used in a particle filter. This result is significant, as it shows that our relative positioning method can match the performance of absolute positioning using bluetooth beacons.
+        To show the generalizability of our method, we also show similar improvements using wheel encoder odometry.
+    </p>
+
+    <br><br><hr>
+
+    <h1>Paper</h1>
+
+    <div class="paper-thumbnail">
+        <a href="https://arxiv.org/pdf/2103.10400.pdf">
+            <img class="layered-paper-big" width="100%" src="./resources/paper.png" alt="Paper thumbnail."/>
+        </a>
+    </div>
+    <div class="paper-info">
+	<h4>Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization</h4>
+        <h5>
+	    Dennis Melamed, Karnik Ram, Vivek Roy, Kris Kitani
+        </h5>
+        <pre><code>
+@INPROCEEDINGS{mapprior,
+  title={Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization},
+  author={Melamed, Dennis and Ram, Karnik and Roy, Vivek and Kitani, Kris},
+  booktitle={2022 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2022},}
+</code>
+        </pre>
+    </div>
+
+    <br><br><hr>
+
+   <h1>Videos</h1>
+	<h2> Results </h2>
+	    <div class="video-container">
+	    <iframe src="https://www.youtube.com/embed/2GMoUJEDO0U" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     </div>
+    <br>
+    <br>
+    <h2> Presentation Video</h2>
+        <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/tgvP2H7wQQE" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+     <br><br><hr>
+    
+    <h1>Code</h1>
+    <a href="https://github.com/KlabCMU/learned-map-prior">
+        <img style="width:60%;" src="./resources/system_diagram.png"
+             alt="System overview figure"/>
+    </a>
+    <br>
+    <a class="links" href="https://github.com/KlabCMU/learned-map-prior">[GitHub]</a>
+
+    <br><br><hr>
+<h1>Acknowledgements</h1>
+<p>
+This work was supported in part by <a href="https://about.meta.com/realitylabs/projectaria">Meta Project Aria.</a><br>
+<a href="https://github.com/jasonyzhang/webpage-template">Webpage
+template</a>.
+</p>
+    <br><br>
+</div>
+
+</body>
+
+</html>
