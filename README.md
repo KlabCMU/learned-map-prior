@@ -1,7 +1,7 @@
 ## Learnable Spatio-Temporal Map Embeddings for Deep Inertial Localization
 Dennis Melamed, Karnik Ram, Vivek Roy, Kris Kitani.
 
-[[`arXiv`](https://arxiv.org/pdf/2103.10400.pdf)]
+[[`arXiv`](https://arxiv.org/pdf/2211.07635)]
 [[`Project Page`](https://klabcmu.github.io/learned-map-prior/)]
 
 In IROS 2022
